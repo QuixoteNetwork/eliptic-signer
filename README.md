@@ -1,4 +1,7 @@
+![Eliptic-Signer-Logo](https://github.com/QuixoteNetwork/eliptic-signer/blob/main/assets/logo.png?raw=true)
+
 # 🔐 Eliptic Signer  
+
 **Ed25519 Message Signing & Verification Tool for Radio Communications**
 
 ![License](https://img.shields.io/badge/license-MIT-green)  ![Python](https://img.shields.io/badge/python-3.9%2B-blue)  ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20MacOS-lightgrey)  ![Status](https://img.shields.io/badge/status-active-success)
