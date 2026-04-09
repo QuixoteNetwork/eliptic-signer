@@ -78,7 +78,7 @@ eliptic-signer/
 
 ## ⚙️ Installation Windows / Linux / MacOS
 
-For Windows you can just download the last .exe on Release section: https://github.com/QuixoteNetwork/eliptic-signer/release
+For Windows you can just download the last .exe on Release section: [Releases](https://github.com/QuixoteNetwork/eliptic-signer/releases)
 
 
 ### 1. Clone the repository
