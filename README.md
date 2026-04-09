@@ -68,7 +68,10 @@ eliptic-signer/
 │   └── crypto_manager.py
 ├── ui/
 │   └── main_screen.py
-├── storage.py
+├── core/
+│   └──contacts.py
+│   └──crypto_utils.py
+│   └──storage.py
 ├── assets/
 │   └── logo.ico
 └── requirements.txt
@@ -147,7 +150,7 @@ python main.py
 
 If you find this project useful and want to support its development:
 
-👉 **Ko-fi:** https://ko-fi.com/quixotenetwork  
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/M4M81CV1EX)
 
 Your support helps maintain and improve tools for the radio community 🙌
 
