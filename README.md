@@ -12,7 +12,7 @@
 
 **Eliptic Signer** is a lightweight application designed to **sign and verify messages using Ed25519**, with a strong focus on **amateur radio communications and offline environments**.
 
-It enables operators to **prove identity and message authenticity** over HF links (MeshFest, VARA, JS8Call, etc.) without using encryption.
+It enables operators to **prove identity and message authenticity** over HF links (MeshFest, APRS, VARA, JS8Call...) without using encryption.
 
 ---
 
@@ -25,6 +25,7 @@ It enables operators to **prove identity and message authenticity** over HF link
 - 🧩 Simple GUI for Windows, Linux, MacOS and Android
 - ⚡ Deterministic signatures
 - 📡 Designed for radio environments:
+  - APRS   
   - VARA HF
   - JS8Call
   - MeshFest
@@ -37,7 +38,7 @@ It enables operators to **prove identity and message authenticity** over HF link
 - ✔️ Prevent impersonation on Radio Comms links
 - ✔️ Validate messages in emergency comms
 - ✔️ Identity verification in decentralized networks
-- ✔️ Mesh ↔ HF hybrid systems
+- ✔️ Mesh ↔ HF hybrid systems and Ham Digital modes
 
 ### Example
 
