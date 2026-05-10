@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Optional
 
 from cryptography.exceptions import InvalidSignature
+from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives.asymmetric.ed25519 import (
     Ed25519PrivateKey,
@@ -87,6 +88,22 @@ class CryptoManager:
         key = serialization.load_pem_private_key(
             data,
             password=password.encode("utf-8") if password else None,
+            backend=default_backend(),
+        )
+        if not isinstance(key, Ed25519PrivateKey):
+            raise TypeError("The loaded private key is not Ed25519")
+        return key
+
+    @staticmethod
+    def load_private_key_from_pem_text(
+        pem_text: str,
+        password: Optional[str] = None,
+    ) -> Ed25519PrivateKey:
+        data = pem_text.encode("utf-8")
+        key = serialization.load_pem_private_key(
+            data,
+            password=password.encode("utf-8") if password else None,
+            backend=default_backend(),
         )
         if not isinstance(key, Ed25519PrivateKey):
             raise TypeError("The loaded private key is not Ed25519")
@@ -94,14 +111,20 @@ class CryptoManager:
 
     @staticmethod
     def load_public_key(path: str | Path) -> Ed25519PublicKey:
-        key = serialization.load_pem_public_key(Path(path).read_bytes())
+        key = serialization.load_pem_public_key(
+            Path(path).read_bytes(),
+            backend=default_backend(),
+        )
         if not isinstance(key, Ed25519PublicKey):
             raise TypeError("The loaded public key is not Ed25519")
         return key
 
     @staticmethod
     def load_public_key_from_pem_text(pem_text: str) -> Ed25519PublicKey:
-        key = serialization.load_pem_public_key(pem_text.encode("utf-8"))
+        key = serialization.load_pem_public_key(
+            pem_text.encode("utf-8"),
+            backend=default_backend(),
+        )
         if not isinstance(key, Ed25519PublicKey):
             raise TypeError("The loaded public key is not Ed25519")
         return key
@@ -209,3 +232,9 @@ class CryptoManager:
     ) -> bool:
         expected = CryptoManager.short_hash_id(text, signature, size=size)
         return expected.strip().upper() == hash_id.strip().upper()
+        
+
+    @staticmethod
+    def load_public_key_from_file(path) -> Ed25519PublicKey:
+        text = Path(path).read_text(encoding="utf-8")
+        return CryptoManager.load_public_key_from_pem_text(text)
