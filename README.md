@@ -14,6 +14,8 @@
 
 It enables operators to **prove identity and message authenticity** over HF links (MeshFest, APRS, VARA, JS8Call...) without using encryption.
 
+<img width="254" height="384" alt="desktop-app" src="https://github.com/user-attachments/assets/70727c8b-aa0b-4f27-8cdd-e100e815322f" />
+
 ---
 
 ## 🚀 Features
@@ -140,8 +142,7 @@ python main.py
 
 ## 🛠️ Roadmap
 
-- [ ] Android version  
-- [ ] Direct VARA / JS8Call integration
+- [x] Android version  
 - [ ] MeshFest integration
 - [ ] QR key exchange  
 - [ ] Trusted contacts management  
